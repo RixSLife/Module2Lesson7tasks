@@ -499,6 +499,7 @@ namespace Module2Lesson7tasks
             //Twój wynik to
             Console.WriteLine("\n");
             Console.WriteLine("Zadanie nr 13 \n");
+            Console.WriteLine("Witaj. Korzystasz wlasnie z kalkulatora.");
             Console.WriteLine("Podaj pierwsza liczbe:");
             string inputA = Console.ReadLine();
             double aa;
