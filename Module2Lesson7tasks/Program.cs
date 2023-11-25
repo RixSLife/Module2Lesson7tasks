@@ -524,10 +524,15 @@ namespace Module2Lesson7tasks
                 Console.WriteLine($"{aa} * {bb} = {mnoz}");
             }
             else if (dzial == 4)
-            {
-                double dzie = aa / bb;
-                Console.WriteLine($"{aa} / {bb} = {dzie}");
-            }
+                if (bb == 0)
+                {
+                    Console.WriteLine("Nie mozna dzielic przez 0!");
+                }
+                else
+                {
+                    double dzie = aa / bb;
+                    Console.WriteLine($"{aa} / {bb} = {dzie}");
+                }
             else
             {
                 Console.WriteLine("Niewlasciwy format danych!");
