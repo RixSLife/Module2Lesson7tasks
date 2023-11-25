@@ -13,8 +13,7 @@ namespace Module2Lesson7tasks
             //b: 5
             //Rezultat w terminalu:
             //5 i 5 są równe
-            Console.WriteLine("Zadanie nr1");
-            Console.WriteLine("");
+            Console.WriteLine("Zadanie nr1\n");
             Console.WriteLine("Czy chcesz sprawdzic czy \"A\" jest rowne \"B\"??? (Y/N)");
             string iWant = Console.ReadLine();
             iWant = iWant.ToUpper();
@@ -23,14 +22,13 @@ namespace Module2Lesson7tasks
             if (iWant == "Y")
             {
                 Console.WriteLine("Podaj liczbe A: ");
-                double a1 = Convert.ToDouble(Console.ReadLine());
+                double a1 = double.Parse(Console.ReadLine());
                 Console.WriteLine("Podaj liczbe B;");
-                double b1 = Convert.ToDouble(Console.ReadLine());
+                double b1 = double.Parse(Console.ReadLine());
 
                 if (a1 == b1)
                 {
                     Console.WriteLine("Tak, wartosc A i B sa sobie rowne.");
-
                 }
                 else
                 {
@@ -47,24 +45,23 @@ namespace Module2Lesson7tasks
             //Dane testowe : 15
             //Rezultat w terminalu:
             //15 jest liczbą nieparzystą
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 2 \n");
+            Console.WriteLine("\nZadanie nr 2\n");
             Console.WriteLine("Podaj liczbe aby sprawdzic czy jest liczba przysta czy nieparzysta.");
             int x = Convert.ToInt32(Console.ReadLine());
-            int y = (x % 2);
+            //int y = (x % 2);
             if (x == 0)
             {
-                Console.WriteLine("Liczba 0 jest uznawana jako liczba parzysta w arytmetyce.");
+                Console.WriteLine("Liczba 0 jest liczba nieparzysta.");
             }
             else
             {
-                if (y == 0)
+                if (x % 2 == 0)
                 {
-                    Console.WriteLine("Liczba " + x + " jest liczba parzysta.");
+                    Console.WriteLine($"Liczba {x} jest liczba parzysta.");
                 }
                 else
                 {
-                    Console.WriteLine("Liczba " + x + " jest liczba nieparzysta.");
+                    Console.WriteLine($"Liczba {x} jest liczba nieparzysta.");
                 }
             }
 
@@ -73,14 +70,13 @@ namespace Module2Lesson7tasks
             //Dane testowe : 14
             //Rezultat w terminalu:
             //14 jest liczbą dodatnią
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 3 \n");
+            Console.WriteLine("\nZadanie nr 3\n");
             Console.WriteLine("Podaj liczbe aby sprawdzic czy liczba jest ujemna czy dodatnia");
             double w = double.Parse(Console.ReadLine());
 
             if (w > 0)
             {
-                Console.WriteLine("Liczba " + w + "jest liczba dodatnia.");
+                Console.WriteLine($"Liczba {w} jest liczba dodatnia.");
             }
             else if (w == 0)
             {
@@ -88,7 +84,7 @@ namespace Module2Lesson7tasks
             }
             else
             {
-                Console.WriteLine("Liczba " + w + "Jest liczba ujemna");
+                Console.WriteLine($"Liczba {w} jest liczba ujemna");
             }
 
             //Zadanie nr 4
@@ -96,8 +92,7 @@ namespace Module2Lesson7tasks
             //Dane testowe : 2016
             //Rezultat w terminalu:
             //2016 jest rokiem przestępnym
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 4 \n");
+            Console.WriteLine("\nZadanie nr 4\n");
             Console.WriteLine("Podaj ROK aby sprawdzic czy jest/byl rokiem przestepnym.");
             double r = double.Parse(Console.ReadLine());
 
@@ -117,22 +112,24 @@ namespace Module2Lesson7tasks
             //Dane testowe : 21
             //Rezultat w terminalu:
             //Możesz zostać posłem
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 5 \n");
-            Console.WriteLine("Podaj wiek aby sprawdzic czy mozesz ubiegac sie o stanowisko");
-            Console.WriteLine("posla, premiera senatora lub prezydenta.");
+            Console.WriteLine("\nZadanie nr 5\n");
+            Console.WriteLine("Podaj wiek aby sprawdzic czy mozesz ubiegac sie o stanowisko posla, premiera senatora lub prezydenta.");
             double age = double.Parse(Console.ReadLine());
             //posel min 21
             //premier min 21
-            //senator min 21
+            //senator min 30
             //prezydent min 35
-            if (age >= 21 && age <= 34)
-            {
-                Console.WriteLine("Mozesz ubiegac sie o stanowisko posla, premiera, senatora lecz nie prezydenta.");
-            }
-            else if (age < 21)
+            if (age < 21)
             {
                 Console.WriteLine("Jestes zbyt mlody by ubiegac sie o stanowisko w rzadzie.");
+            }
+            else if (age >= 21 && age < 30)
+            {
+                Console.WriteLine("Mozesz ubiegac sie o stanowisko posla i premiera lecz nie senatora i prezydenta.");
+            }
+            else if (age >= 21 && age <= 30)
+            {
+                Console.WriteLine("Mozesz ubiegac sie o stanowisko posla, premiera i senatora lecz nie prezydenta.");
             }
             else
             {
@@ -144,7 +141,7 @@ namespace Module2Lesson7tasks
             //Dane testowe : 140
             //Rezultat w terminalu:
             //Jesteś krasnoludem
-            Console.WriteLine("Zadanie nr 6 \n");
+            Console.WriteLine("\nZadanie nr 6\n");
             Console.WriteLine("Podaj swoj wzrost: (cm)");
             double wz;
             if (double.TryParse(Console.ReadLine(), out wz))
@@ -153,11 +150,11 @@ namespace Module2Lesson7tasks
                 {
                     Console.WriteLine("Jestes krasnoludem.");
                 }
-                else if (wz > 140 && wz < 180)
+                else if (wz < 180)
                 {
                     Console.WriteLine("Prawie jak facet...");
                 }
-                else if (wz >= 180 && wz < 200)
+                else if (wz < 200)
                 {
                     Console.WriteLine("No i to jest facet.");
                 }
@@ -179,8 +176,7 @@ namespace Module2Lesson7tasks
             //79
             //Rezultat w terminalu:
             //79 jest największa z podanych
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 7 \n");
+            Console.WriteLine("\nZadanie nr 7\n");
             Console.WriteLine("Podaj liczy do sprawdzenia ktora z nich jest najwieksza:\n");
             Console.WriteLine("Podaj pierwsza liczbe : ");
             string liczba1input = Console.ReadLine();
@@ -196,11 +192,10 @@ namespace Module2Lesson7tasks
             double.TryParse(liczba3input, out liczba3);
 
             double liczMax = Math.Max(Math.Max(liczba1, liczba2), liczba3);
-            Console.WriteLine("Najwieksza z liczb jest: " + liczMax);
+            Console.WriteLine($"Najwieksza z liczb jest: {liczMax}");
 
             //Zadanie nr 7 ver 2 "IFowa"
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 7 ver 2 \n");
+            Console.WriteLine("\nZadanie nr 7 ver 2 \n");
             Console.WriteLine("Podaj liczy do sprawdzenia ktora z nich jest najwieksza:\n");
             Console.WriteLine("Podaj pierwsza liczbe : ");
             string liczba1ainput = Console.ReadLine();
@@ -219,22 +214,22 @@ namespace Module2Lesson7tasks
             {
                 if (liczba1a > liczba3a)
                 {
-                    Console.WriteLine(liczba1a + " jest liczba najwieksza.");
+                    Console.WriteLine($"{liczba1a} jest liczba najwieksza.");
                 }
                 else
                 {
-                    Console.WriteLine(liczba3a + " jest liczba najwieksza.");
+                    Console.WriteLine($"{liczba3a} jest liczba najwieksza.");
                 }
             }
             else
             {
                 if (liczba2a > liczba3a)
                 {
-                    Console.WriteLine(liczba2a + " jest liczba najwieksza.");
+                    Console.WriteLine($"{liczba2a} jest liczba najwieksza.");
                 }
                 else
                 {
-                    Console.WriteLine(liczba3a + " jest liczba najwieksza.");
+                    Console.WriteLine($"{liczba3a} jest liczba najwieksza.");
                 }
             }
 
@@ -252,7 +247,7 @@ namespace Module2Lesson7tasks
             //Chemia 0
             //Rezultat w terminalu:
             //Kandydat dopuszczony do rekrutacji
-            Console.WriteLine("Zadanie nr 8\n");
+            Console.WriteLine("\nZadanie nr 8\n");
             Console.WriteLine("Podaj wyniki z matury aby sprawdzic czy mozesz ubiegac sie o miejsce na studiach.");
             Console.WriteLine("Podaj wynik matury z MATEMATYKI:");
             double mat;
@@ -272,7 +267,7 @@ namespace Module2Lesson7tasks
                         double chem;
                         if (double.TryParse(Console.ReadLine(), out chem))
                         {
-                            if ((mat + chem) > 150 || (mat + fiz + chem) > 180 || (mat > 70 && fiz > 55 && chem > 45))
+                            if ((mat + chem) > 150 || (mat + fiz + chem) > 180 && (mat > 70 && fiz > 55 && chem > 45))
                             {
                                 Console.WriteLine("Kwalifikujesz sie do miejsca na studiach.");
                             }
@@ -308,8 +303,7 @@ namespace Module2Lesson7tasks
             //Dane testowe : 41
             //Rezultat w terminalu:
             //a weź wyprowadzam się na Alaskę.
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 9\n");
+            Console.WriteLine("\nZadanie nr 9\n");
             Console.WriteLine("Podaj temperature: ('C)");
             double temp;
             if (double.TryParse(Console.ReadLine(), out temp))
@@ -318,19 +312,19 @@ namespace Module2Lesson7tasks
                 {
                     Console.WriteLine("Cholernie pizdzi.");
                 }
-                else if (temp >= 0 && temp < 10)
+                else if (temp < 10)
                 {
                     Console.WriteLine("Zimno.");
                 }
-                else if (temp >= 10 && temp < 20)
+                else if (temp < 20)
                 {
                     Console.WriteLine("Chlodno.");
                 }
-                else if (temp >= 20 && temp < 30)
+                else if (temp < 30)
                 {
                     Console.WriteLine("W sam raz.");
                 }
-                else if (temp >= 30 && temp < 40)
+                else if (temp < 40)
                 {
                     Console.WriteLine("Zaczyna byc slabo, bo goraco.");
                 }
@@ -350,8 +344,7 @@ namespace Module2Lesson7tasks
             //Rezultat w terminalu:
             //Można zbudować trójkąt
             // Mozna zbudowac gdy suma dwoch bokow wynosi wiecej niz trzeci (najdluszy)
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 10\n");
+            Console.WriteLine("\nZadanie nr 10\n");
             Console.WriteLine("Podaj trzy dlugosci do stworzenia trojkata:");
             Console.WriteLine("Dlugosc \"A\":");
             string inpA = Console.ReadLine();
@@ -406,7 +399,7 @@ namespace Module2Lesson7tasks
             //Dane testowe : 3
             //Rezultat w terminalu:
             //Dostateczny
-            Console.WriteLine("Zadanie nr 11 \n");
+            Console.WriteLine("\nZadanie nr 11 \n");
             Console.WriteLine("Podaj ocene by otrzymac jej opis:");
             string userInput = Console.ReadLine();
             int ocena;
@@ -445,8 +438,7 @@ namespace Module2Lesson7tasks
             //Dane testowe: 4
             //Rezultat w terminalu:
             //Czwartek
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 12 \n");
+            Console.WriteLine("\nZadanie nr 12 \n");
             Console.WriteLine("Podaj nr dnia tygodnia:");
             string usInput = Console.ReadLine();
             int dzien;
@@ -497,8 +489,7 @@ namespace Module2Lesson7tasks
             //4.Dzielenie
             //…
             //Twój wynik to
-            Console.WriteLine("\n");
-            Console.WriteLine("Zadanie nr 13 \n");
+            Console.WriteLine("\nZadanie nr 13 \n");
             Console.WriteLine("Witaj. Korzystasz wlasnie z kalkulatora.");
             Console.WriteLine("Podaj pierwsza liczbe:");
             string inputA = Console.ReadLine();
