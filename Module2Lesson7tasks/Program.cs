@@ -1,4 +1,5 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Module2Lesson7tasks
 {
@@ -127,11 +128,11 @@ namespace Module2Lesson7tasks
             {
                 Console.WriteLine("Mozesz ubiegac sie o stanowisko posla i premiera lecz nie senatora i prezydenta.");
             }
-            else if (age >= 21 && age <= 30)
+            else if (age >= 21 && age < 35)
             {
                 Console.WriteLine("Mozesz ubiegac sie o stanowisko posla, premiera i senatora lecz nie prezydenta.");
             }
-            else
+            else 
             {
                 Console.WriteLine("Mozesz ubiegac sie o stanowisko posla, premiera, senatora i prezydenta.");
             }
@@ -359,33 +360,19 @@ namespace Module2Lesson7tasks
             double c;
             double.TryParse(inpC, out c);
 
-            if (a >= b)
+            if ((a + b) > c && (a + c) > b && (b + c) > a)
             {
-                if (a >= c)
-                {
-                    if ((b + c) > a)
-                    {
-                        Console.WriteLine("Z tych dlugosci mozna stworzyc trojkat.");
-                    }
-                    else { Console.WriteLine("Niestety z tych dlugosci nie mozna stworzyc trojkata."); }
-                }
-                else
-                {
-                    if ((a + b) > c)
-                    {
-                        Console.WriteLine("Z tych dlugosci mozna stworzyc trojkat.");
-                    }
-                    else { Console.WriteLine("Niestety z tych dlugosci nie mozna stworzyc trojkata."); }
-                }
+                Console.WriteLine("Z tych dlugosci mozna stworzyc trojkat.");
             }
-            else
-            {
-                if ((a + c) > b)
-                {
-                    Console.WriteLine("Z tych dlugosci mozna stworzyc trojkat.");
-                }
-                else { Console.WriteLine("Niestety z tych dlugosci nie mozna stworzyc trojkata."); }
-            }
+ //           else if ((a + c) > b)
+ //           {
+ //               Console.WriteLine("Z tych dlugosci mozna stworzyc trojkat.");
+//            }
+//            else if ((b + c) > a)
+//            {
+//                Console.WriteLine("Z tych dlugosci mozna stworzyc trojkat.");
+ //           }
+            else { Console.WriteLine("Niestety z tych dlugosci nie mozna stworzyc trojkata."); }
 
             //Zadanie nr 11
             //Napisz program, który zmieni ocenę ucznia na jej opis wg podanej tabeli:
