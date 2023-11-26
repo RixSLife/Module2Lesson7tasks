@@ -99,7 +99,7 @@ namespace Module2Lesson7tasks
 
             double rr = (r % 4);
 
-            if (rr == 0)
+            if ((r % 4) == 0 && (r % 100) == 0 && (r  % 400) == 0)
             {
                 Console.WriteLine("Tak, to rok przestepny.");
             }
